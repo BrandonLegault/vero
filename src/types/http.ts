@@ -1,7 +1,8 @@
 // Probably unnecessary but saves human error
-export enum HTTP {
-    POST = 'POST',
-    PUT = 'PUT',
-    GET = 'GET',
-
+enum HTTP {
+  POST = "POST",
+  PUT = "PUT",
+  GET = "GET",
 }
+// `export default enum` not supported
+export default HTTP;

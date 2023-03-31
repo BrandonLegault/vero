@@ -1,4 +1,4 @@
 export type VeroResponse = {
-    status: number;
-    message: string;
-}
+  status: number;
+  message: string;
+};
