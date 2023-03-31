@@ -3,12 +3,12 @@ import fetch from "node-fetch";
 import { VeroUser } from "./types/users";
 import { VeroEvent } from "./types/events";
 import { VeroResponse } from "./types/veroResponse";
-import { HTTP } from "./types/http";
+import Http from "./types/http";
 
 export default class Vero {
   private readonly authToken: string;
 
-  private readonly apiUrl: string = "https://api.getvero.com/api/v2";
+  private readonly apiUrl: string = "Https://api.getvero.com/api/v2";
 
   public Users: VeroUser;
 
@@ -29,12 +29,12 @@ export default class Vero {
   }
 
   private sendToVero = async (
-    httpMethod: string,
+    HttpMethod: string,
     endpoint: string,
     data: object
   ): Promise<VeroResponse> => {
     const response = await fetch(`${this.apiUrl}${endpoint}`, {
-      method: httpMethod,
+      method: HttpMethod,
       headers: {
         "Content-Type": "application/json",
       },
@@ -57,7 +57,7 @@ export default class Vero {
     email: string,
     data: object
   ): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.POST, "/users/track", {
+    return this.sendToVero(Http.POST, "/users/track", {
       id: userId,
       email,
       data,
@@ -68,7 +68,7 @@ export default class Vero {
     userId: string,
     newId: string
   ): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.PUT, "/users/reidentify", {
+    return this.sendToVero(Http.PUT, "/users/reidentify", {
       id: userId,
       new_id: newId,
     });
@@ -79,7 +79,7 @@ export default class Vero {
     add?: string[],
     remove?: string[]
   ): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.PUT, "/users/tags/edit", {
+    return this.sendToVero(Http.PUT, "/users/tags/edit", {
       id: userId,
       add,
       remove,
@@ -87,13 +87,13 @@ export default class Vero {
   };
 
   private unsubscribe = async (userId: string): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.POST, "/users/unsubscribe", {
+    return this.sendToVero(Http.POST, "/users/unsubscribe", {
       id: userId,
     });
   };
 
   private resubscribe = async (userId: string): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.POST, "/users/resubscribe", {
+    return this.sendToVero(Http.POST, "/users/resubscribe", {
       id: userId,
     });
   };
@@ -104,7 +104,7 @@ export default class Vero {
     eventName: string,
     data: object
   ): Promise<VeroResponse> => {
-    return this.sendToVero(HTTP.POST, "/events/track", {
+    return this.sendToVero(Http.POST, "/events/track", {
       identity: { id: userId, email },
       event_name: eventName,
       data,
