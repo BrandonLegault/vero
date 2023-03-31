@@ -1,6 +1,6 @@
 {
   "name": "vero-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript Wrapper for getvero.com API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -49,8 +49,5 @@
   "bugs": {
     "url": "https://github.com/BrandonLegault/vero/issues"
   },
-  "homepage": "https://github.com/BrandonLegault/vero",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "homepage": "https://github.com/BrandonLegault/vero"
 }
