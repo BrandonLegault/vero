@@ -2,7 +2,12 @@
   "name": "vero-ts",
   "version": "0.0.1",
   "description": "Typescript Wrapper for getvero.com API",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "license": "MIT",
   "scripts": {
     "build": "tsc --build",
     "build:watch": "tsc --build --watch",
@@ -41,9 +46,11 @@
     "name": "B. David Legault",
     "email": "bdlegault@gmail.com"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BrandonLegault/vero/issues"
   },
-  "homepage": "https://github.com/BrandonLegault/vero"
+  "homepage": "https://github.com/BrandonLegault/vero",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
