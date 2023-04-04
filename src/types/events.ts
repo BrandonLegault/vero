@@ -4,7 +4,7 @@ export type Track = (
   userId: string,
   email: string,
   eventName: string,
-  data: object
+  data: Record<string, unknown>
 ) => Promise<VeroResponse>;
 
 export type VeroEvent = {

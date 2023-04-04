@@ -3,7 +3,7 @@ import { VeroResponse } from "./veroResponse";
 export type Track = (
   userId: string,
   email: string,
-  data: object
+  data: Record<string, unknown>
 ) => Promise<VeroResponse>;
 export type Reidentify = (
   userId: string,

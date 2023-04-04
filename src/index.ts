@@ -31,7 +31,7 @@ export default class Vero {
   private sendToVero = async (
     HttpMethod: string,
     endpoint: string,
-    data: object
+    data: Record<string, unknown>
   ): Promise<VeroResponse> => {
     const response = await fetch(`${this.apiUrl}${endpoint}`, {
       method: HttpMethod,
@@ -55,7 +55,7 @@ export default class Vero {
   private track = async (
     userId: string,
     email: string,
-    data: object
+    data: Record<string, unknown>
   ): Promise<VeroResponse> => {
     return this.sendToVero(Http.POST, "/users/track", {
       id: userId,
@@ -102,7 +102,7 @@ export default class Vero {
     userId: string,
     email: string,
     eventName: string,
-    data: object
+    data: Record<string, unknown>
   ): Promise<VeroResponse> => {
     return this.sendToVero(Http.POST, "/events/track", {
       identity: { id: userId, email },
