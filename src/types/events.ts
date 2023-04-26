@@ -2,7 +2,7 @@ import { VeroResponse } from "./veroResponse";
 
 export type Track = (
   userId: string,
-  email: string,
+  email: string | null,
   eventName: string,
   data: Record<string, unknown>
 ) => Promise<VeroResponse>;
