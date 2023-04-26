@@ -100,7 +100,7 @@ export default class Vero {
 
   private trackEvent = async (
     userId: string,
-    email: string,
+    email: string | null,
     eventName: string,
     data: Record<string, unknown>
   ): Promise<VeroResponse> => {
